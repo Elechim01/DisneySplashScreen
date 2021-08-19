@@ -9,8 +9,26 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+//        YourBase View..
+        NavigationView{
+            ScrollView(.vertical, showsIndicators: false) {
+                VStack {
+                    Image("iJustine")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(height: 480)
+                        .cornerRadius(15)
+                    
+                    Text("iJustine")
+                        .font(.title.bold())
+                        
+                }
+                .padding()
+            }
+            .navigationTitle("Latest")
+        }
+//        Use Overlay since ZStack having issues with animation..
+        .overlay(SplashScreen())
     }
 }
 
